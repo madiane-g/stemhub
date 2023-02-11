@@ -1,5 +1,34 @@
-<p>study works!</p>
+<button routerLink="" class="homebutton">← Return home</button>
 
-<button routerLink="" class="homebutton">
-    Home
-</button>
+<div class="tasklist">
+    <h2>Tasks</h2>
+
+</div>
+
+<div class="timer">
+    <br>
+    <div>
+        <button class="timertype" (click)="setStudy()">Study Session</button>
+        <button class="timertype" (click)="setBreak()">Take a Break</button>
+    </div>
+    {{timeFormatted}}
+    <div>
+        <button (click)="timer()">{{startorpause}}</button> 
+    </div>
+</div>
+
+<div class="timerSettings">
+    <h3>Settings</h3>
+<form [formGroup]="TimerForm" (ngSubmit)="onSubmit()">
+    <p>Study session length</p>
+    <input id="smin" type="text" formControlName="smin"> : 
+    <input id="ssec" type="text" formControlName="ssec">
+    
+    <p>Study break length</p>
+    <input id="bmin" type="text" formControlName="bmin"> : 
+    <input id="bsec" type="text" formControlName="bsec">
+    <div>
+        <br>
+        <button class="button" type="submit">Set timer settings</button>
+    </div>
+</form>
