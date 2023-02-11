@@ -21,12 +21,12 @@
     <h3>Settings</h3>
 <form [formGroup]="TimerForm" (ngSubmit)="onSubmit()">
     <p>Study session length</p>
-    <input id="smin" type="text" formControlName="smin"> : 
-    <input id="ssec" type="text" formControlName="ssec">
+    <input id="smin" type="text" formControlName="smin" minlength="1" maxlength="2"> : 
+    <input id="ssec" type="text" formControlName="ssec" minlength="1" maxlength="2">
     
     <p>Study break length</p>
-    <input id="bmin" type="text" formControlName="bmin"> : 
-    <input id="bsec" type="text" formControlName="bsec">
+    <input id="bmin" type="text" formControlName="bmin" minlength="1" maxlength="2"> : 
+    <input id="bsec" type="text" formControlName="bsec" minlength="1" maxlength="2">
     <div>
         <br>
         <button class="button" type="submit">Set timer settings</button>
