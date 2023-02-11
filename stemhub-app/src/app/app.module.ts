@@ -12,6 +12,7 @@ import { TechnologyComponent } from './technology/technology.component';
 import { EngineeringComponent } from './engineering/engineering.component';
 import { MathComponent } from './math/math.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { MathComponent } from './math/math.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'study', component: StudyComponent },
