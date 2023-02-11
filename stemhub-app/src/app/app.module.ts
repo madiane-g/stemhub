@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing-module/app-routing-module.module
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { StudyComponent } from './study/study.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    StudyComponent
+    StudyComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,7 @@ import { StudyComponent } from './study/study.component';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'study', component: StudyComponent },
+      { path: 'resources', component: ResourcesComponent },
     ])
   ],
   providers: [],
