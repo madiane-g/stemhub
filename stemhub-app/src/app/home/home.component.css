@@ -414,8 +414,8 @@ h1 {
 
 h3 {
     font-weight: 100;
-    line-height: 30px;
-    font-size: larger;
+    line-height: 32px;
+    font-size: 22px;
     font-family: "Lato", sans-serif;
 }
 
@@ -464,4 +464,10 @@ h3 {
     display: flex;
     justify-content: center;
     margin-top: 60px;
+}
+
+.banner {
+    background: url(../../assets/grow-plant.png);
+    height: 170px;
+    margin-top: 100px;
 }
