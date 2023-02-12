@@ -2,6 +2,15 @@
 
 <div class="tasklist">
     <h2>Tasks</h2>
+    <form [formGroup]="TaskForm" (ngSubmit)="onTaskSubmit()">
+        <input formControlName="newTask" type="text">
+        <button class="addbtn" type="submit">+</button>
+    </form>
+    <div class="tasks" *ngFor="let task of tasks">
+        <input type="checkbox">
+        {{task}}
+        <button class="deletebtn" (click)="deleteTask(task)">X</button>
+    </div>
 
 </div>
 
@@ -19,16 +28,16 @@
 
 <div class="timerSettings">
     <h3>Settings</h3>
-<form [formGroup]="TimerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="TimerForm" (ngSubmit)="onTimerSubmit()">
     <p>Study session length</p>
-    <input id="smin" type="text" formControlName="smin"> : 
-    <input id="ssec" type="text" formControlName="ssec">
+    <input id="smin" type="text" formControlName="smin" minlength="1" maxlength="2"> : 
+    <input id="ssec" type="text" formControlName="ssec" minlength="1" maxlength="2">
     
     <p>Study break length</p>
-    <input id="bmin" type="text" formControlName="bmin"> : 
-    <input id="bsec" type="text" formControlName="bsec">
+    <input id="bmin" type="text" formControlName="bmin" minlength="1" maxlength="2"> : 
+    <input id="bsec" type="text" formControlName="bsec" minlength="1" maxlength="2">
     <div>
         <br>
-        <button class="button" type="submit">Set timer settings</button>
+        <button class="settingsbtn" type="submit">Set timer settings</button>
     </div>
 </form>
