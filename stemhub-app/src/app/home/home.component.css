@@ -1,6 +1,10 @@
 .topnav {
     background-color: #0CC6C4;
     overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 98%;
+    margin-left: 0 auto;
   }
   
   /* Style the links inside the navigation bar */
@@ -22,7 +26,7 @@
     border-radius: 15px;
   }
 
-input[type=text] {
+form {
     float: center;
     display: flex;
     justify-content: center;
@@ -32,12 +36,24 @@ input[type=text] {
     width: 90%;
     padding: 20px;
     padding-left: 45px !important;
+}
+
+input[type=text] {
+    float: center;
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 50px;
+    font-size: 17px;
+    width: 90%;
+    padding: 20px;
+    padding-left: 4% !important;
     border-style: solid;
   }
 
 .searchButton {
     position: absolute;
-    top: 29%;
+    top: 30%;
     left: 91%;
     width: 70px;
     height: 50px;
@@ -83,8 +99,8 @@ input[type=text] {
 
   .search-icon {
     position: absolute;
-    top: 35%;
-    left: 12%;
+    top: 37%;
+    left: 14%;
     width: 14px;
   }
 
@@ -100,6 +116,7 @@ input[type=text] {
     border: none;
     margin-left: 12%;
     margin-right: 3%;
+    opacity: 1;
 }
 
 .techButton {
@@ -147,21 +164,25 @@ input[type=text] {
 .scienceButton:hover {
     background-color: #913BFB !important;
     background: none;
+    cursor: pointer;
 }
 
 .techButton:hover {
     background-color: #913BFB !important;
     background: none;
+    cursor: pointer;
 }
 
 .engineeringButton:hover {
     background-color: #913BFB !important;
     background: none;
+    cursor: pointer;
 }
 
 .mathButton:hover {
     background-color: #913BFB !important;
     background: none;
+    cursor: pointer;
 }
 
 .text {
@@ -185,4 +206,43 @@ input[type=text] {
 
 .mathButton:hover .text {
     opacity: 1;
+}
+
+.studysesh {
+    float: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.studybutton {
+    width: 500px;
+    height: 70px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #0CC6C4;
+    color:#913BFB;
+    font-size: larger;
+    font-weight: 900;
+    background-color: white;
+}
+
+.studybutton:hover {
+    /* background-color: #0CC6C4;
+    color: white; */
+    cursor: pointer;
+}
+
+.buttons {
+    float: center;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    float: center;
+    display: flex;
+    justify-content: center;
+    font-size: 65px;
+    padding-top: 80px;
 }
