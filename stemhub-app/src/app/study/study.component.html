@@ -1,13 +1,21 @@
 <button routerLink="" class="homebutton">← Return home</button>
 
+<div class="header">
+    <h1>Study Session</h1>
+</div>
+
 <div class="tasklist">
     <h2>Tasks</h2>
-    <form [formGroup]="TaskForm" (ngSubmit)="onTaskSubmit()">
-        <input formControlName="newTask" type="text">
-        <button class="addbtn" type="submit">+</button>
-    </form>
+    <div class="taskBar">
+        <form [formGroup]="TaskForm" (ngSubmit)="onTaskSubmit()">
+            <input formControlName="newTask" type="text">
+            <button class="addbtn" type="submit">+</button>
+        </form>
+    </div>
+    
     <div class="tasks" *ngFor="let task of tasks">
         <input type="checkbox">
+        <span class="checked"></span>
         {{task}}
         <button class="deletebtn" (click)="deleteTask(task)">X</button>
     </div>
@@ -28,16 +36,17 @@
 
 <div class="timerSettings">
     <h3>Settings</h3>
-<form [formGroup]="TimerForm" (ngSubmit)="onTimerSubmit()">
-    <p>Study session length</p>
-    <input id="smin" type="text" formControlName="smin" minlength="1" maxlength="2"> : 
-    <input id="ssec" type="text" formControlName="ssec" minlength="1" maxlength="2">
+    <form [formGroup]="TimerForm" (ngSubmit)="onTimerSubmit()">
+        <p>Study session length</p>
+        <input id="smin" type="text" formControlName="smin" minlength="1" maxlength="2"> : 
+        <input id="ssec" type="text" formControlName="ssec" minlength="1" maxlength="2">
     
-    <p>Study break length</p>
-    <input id="bmin" type="text" formControlName="bmin" minlength="1" maxlength="2"> : 
-    <input id="bsec" type="text" formControlName="bsec" minlength="1" maxlength="2">
-    <div>
-        <br>
-        <button class="settingsbtn" type="submit">Set timer settings</button>
-    </div>
-</form>
+        <p>Study break length</p>
+        <input id="bmin" type="text" formControlName="bmin" minlength="1" maxlength="2"> : 
+        <input id="bsec" type="text" formControlName="bsec" minlength="1" maxlength="2">
+        <div>
+            <br>
+            <button class="settingsbtn" type="submit">Set timer settings</button>
+        </div>
+    </form>
+</div>
