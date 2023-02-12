@@ -36,17 +36,29 @@ export class HomeComponent {
     var input = this.searchBar.value.Search || '';
     this.searchBar.reset();
     console.log(input);
-    if (input.toUpperCase() == "SCIENCE") {
-      window.location.assign("http://localhost:4200/science")
+    const re: RegExp = /SCIENCE/
+    const re1: RegExp = /TECHNOLOGY/
+    const re2: RegExp = /ENGINEERING/
+    const re3: RegExp = /MATH/
+    const re4: RegExp = /STUDY/
+    const re5: RegExp = /PLAYLIST/
+    if (re.test(input.toUpperCase())) {
+      window.location.assign("/science")
     }
-    else if (input.toUpperCase() == "TECHNOLOGY") {
-      window.location.assign("http://localhost:4200/technology")
+    else if (re1.test(input.toUpperCase())) {
+      window.location.assign("/technology")
     }
-    else if (input.toUpperCase() == "ENGINEERING") {
-      window.location.assign("http://localhost:4200/engineering")
+    else if (re2.test(input.toUpperCase())) {
+      window.location.assign("/engineering")
     }
-    else if (input.toUpperCase() == "MATH") {
-      window.location.assign("http://localhost:4200/math")
+    else if (re3.test(input.toUpperCase())) {
+      window.location.assign("/math")
+    }
+    else if (re4.test(input.toUpperCase())) {
+      window.location.assign("/study")
+    }
+    else if (re5.test(input.toUpperCase())) {
+      window.location.assign("/study")
     }
     else {
       window.alert("Search result could not be found. Please enter a valid search.")
