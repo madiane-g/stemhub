@@ -361,6 +361,32 @@ input[type=text] {
     -webkit-text-fill-color: white; */
 }
 
+.spotifyButton {
+    background: url(../../assets/spotify.png) no-repeat;
+    background-position: center;
+    font-size: large;
+    font-weight: 900;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    border: none; 
+    margin-left: 3%;
+    margin-right: 12%;
+}
+
+.spotifyButton:hover {
+    background: none;
+    cursor: pointer;
+    background: -webkit-linear-gradient(blue, #913BFB);
+    -webkit-bg-clip: background;
+    -webkit-text-fill-color: white;
+}
+
+.spotifyButton:hover .text {
+    opacity: 1;
+}
+
 .studybutton:hover {
     border-style: solid;
     background-color: white;
