@@ -58,6 +58,8 @@ export class StudyComponent {
     if (this.TimerForm.status == 'INVALID'){
       window.alert("Please enter all fields before setting the timer.")
     } else {
+      this.minutes = this.safeTime;
+      this.seconds = this.safeTime;
       this.studyMin = this.TimerForm.get('smin')?.value ?? this.safeTime;
       this.studySec = this.TimerForm.get('ssec')?.value ?? this.safeTime;
       this.breakMin = this.TimerForm.get('bmin')?.value ?? this.safeTime;

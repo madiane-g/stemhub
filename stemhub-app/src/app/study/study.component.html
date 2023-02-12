@@ -1,17 +1,26 @@
-<button routerLink="" class="homebutton">← Return home</button>
+<div class="homebar">
+    <button routerLink="" class="homebutton">← Return home</button>
+</div>
+
+<img class="books" src="../assets/books.png" />
+<div class="header">
+    <h1>Study Session</h1>
+</div>
 
 <div class="tasklist">
     <h2>Tasks</h2>
-    <form [formGroup]="TaskForm" (ngSubmit)="onTaskSubmit()">
-        <input formControlName="newTask" type="text">
-        <button class="addbtn" type="submit">+</button>
-    </form>
+    <div class="taskBar">
+        <form [formGroup]="TaskForm" (ngSubmit)="onTaskSubmit()">
+            <input class="taskTyper" formControlName="newTask" type="text">
+            <button class="addbtn" type="submit">+</button>
+        </form>
+    </div>
+    
     <div class="tasks" *ngFor="let task of tasks">
         <input type="checkbox">
         {{task}}
         <button class="deletebtn" (click)="deleteTask(task)">X</button>
     </div>
-
 </div>
 
 <div class="timer">
@@ -20,24 +29,29 @@
         <button class="timertype" (click)="setStudy()">Study Session</button>
         <button class="timertype" (click)="setBreak()">Take a Break</button>
     </div>
-    {{timeFormatted}}
+    <img class="timerIcon" src="../assets/chronometer.png" />
+    <b class="timerText">
+        {{timeFormatted}}
+    </b>
     <div>
-        <button (click)="timer()">{{startorpause}}</button> 
+        <button class="startstop" (click)="timer()">{{startorpause}}</button> 
     </div>
 </div>
 
 <div class="timerSettings">
-    <h3>Settings</h3>
-<form [formGroup]="TimerForm" (ngSubmit)="onTimerSubmit()">
-    <p>Study session length</p>
-    <input id="smin" type="text" formControlName="smin" minlength="1" maxlength="2"> : 
-    <input id="ssec" type="text" formControlName="ssec" minlength="1" maxlength="2">
-    
-    <p>Study break length</p>
-    <input id="bmin" type="text" formControlName="bmin" minlength="1" maxlength="2"> : 
-    <input id="bsec" type="text" formControlName="bsec" minlength="1" maxlength="2">
-    <div>
+    <form [formGroup]="TimerForm" (ngSubmit)="onTimerSubmit()">
+        <h3>Settings</h3>
+        Study session length
+        <input class="timein" id="smin" type="text" formControlName="smin" minlength="1" maxlength="2"> : 
+        <input class="timein" id="ssec" type="text" formControlName="ssec" minlength="1" maxlength="2">
         <br>
-        <button class="settingsbtn" type="submit">Set timer settings</button>
-    </div>
-</form>
+        <br>
+        Study break length
+        <input class="timein" id="bmin" type="text" formControlName="bmin" minlength="1" maxlength="2"> : 
+        <input class="timein" id="bsec" type="text" formControlName="bsec" minlength="1" maxlength="2">
+        <div>
+            <br>
+            <button class="settingsbtn" type="submit">Set timer settings</button>
+        </div>
+    </form>
+</div>
