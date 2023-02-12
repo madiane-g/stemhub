@@ -87,3 +87,102 @@ input[type=text] {
     left: 12%;
     width: 14px;
   }
+
+.scienceButton {
+    background:url(../../assets/biology.png) no-repeat;
+    background-position: center;
+    font-size: large;
+    font-weight: 900;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    margin-left: 12%;
+    margin-right: 3%;
+}
+
+.techButton {
+    background:url(../../assets/digital.png) no-repeat;
+    background-position: center;
+    font-size: large;
+    font-weight: 900;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    border: none; 
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.engineeringButton {
+    background:url(../../assets/engineering.png) no-repeat;
+    background-position: center;
+    font-size: large;
+    font-weight: 900;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    border: none; 
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.mathButton {
+    background: url(../../assets/calculating.png) no-repeat;
+    background-position: center;
+    font-size: large;
+    font-weight: 900;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    border-radius: 10px;
+    border: none; 
+    margin-left: 3%;
+    margin-right: 12%;
+}
+
+.scienceButton:hover {
+    background-color: #913BFB !important;
+    background: none;
+}
+
+.techButton:hover {
+    background-color: #913BFB !important;
+    background: none;
+}
+
+.engineeringButton:hover {
+    background-color: #913BFB !important;
+    background: none;
+}
+
+.mathButton:hover {
+    background-color: #913BFB !important;
+    background: none;
+}
+
+.text {
+    width: 180px;
+    height: 180px;
+    opacity: 0;
+    color: white;
+}
+
+.scienceButton:hover .text {
+    opacity: 1;
+}
+
+.techButton:hover .text {
+    opacity: 1;
+}
+
+.engineeringButton:hover .text {
+    opacity: 1;
+}
+
+.mathButton:hover .text {
+    opacity: 1;
+}
