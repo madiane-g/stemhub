@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
   <head>
     <title>Top Tracks</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -16,10 +17,16 @@
     </style>
   </head>
 
-  <body>
+  <body style="background-color:aquamarine;">
     <div class="container">
       <div id="login">
-        <h1>This gets a user's top tracks</h1>
+        <h1>Stressed out?</h1>
+        <p> Take a break! We know how overwhelming studying can get and research shows that taking purposeful breaks actually <a href="https://health.cornell.edu/about/news/study-breaks-stress-busters#:~:text=Research%20shows%20that%20taking%20purposeful,productivity%2C%20and%20ability%20to%20focus">
+          INCREASES </a>your productivity!</p>
+          <br>
+        <p> That being said, we also know from first hand experience how distracting it is when you have to interrupt your study session by using your phone to play your favorite music.</p> 
+        <br> <h4> No need to worry!</h4> 
+        <p> Get access to your Spotify right from STEMHUB and take a well-deserved break without worrying about all the other notifications on your phone! </p>
         <a href="/login" class="btn btn-primary">Log in with Spotify</a>
       </div>
       <div id="loggedin">
@@ -42,7 +49,7 @@
             <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
             <dt>Email</dt><dd>{{email}}</dd>
             <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+            <!-- <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd> -->
             <!-- <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd> -->
             <dt>Country</dt><dd>{{country}}</dd>
           </dl>
@@ -55,7 +62,17 @@
       <dl class="dl-horizontal">
         <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
         <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}</dd>
+        <br>
+        <h4 text-align="center"> Your top song is: <span id="song_name"> </a></span>   </h4>
+        <br>
+        <h4> Want to give it a quick listen?  </a></h4>
+        <h4> <button>  <a href="www.toBeChanged.com" id="preview_url">CLICK HERE! </a> </button></h4>
+        <p>Here are 9 more songs to lift you up. You got this!  <span id="song_name_arr"></span></p>
+        
+          <div id="x"></div> 
+      
       </dl>
+      
     </script>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
@@ -247,14 +264,12 @@
         
           
       })();
+
+      
     
     </script>
-<h4> Your top song is: <span id="song_name"> </a></span>   </h4>
-<h4>Want to give it a quick listen?  </a></h4>
-<h4> <a href="www.toBeChanged.com" id="preview_url">Click here! </a> </h4>
-<p>Here are 9 more songs to lift you up. You got this!  <span id="song_name_arr"></span></p>
 
-  <div id="x"></div> 
+    
 
   </body>
 </html>
