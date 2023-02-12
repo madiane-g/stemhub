@@ -39,13 +39,11 @@
         </div>
         <div class="media-body">
           <dl class="dl-horizontal">
-            <dt> Top Track </dt> <dd> sup </dd>
             <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-            <dt>Id</dt><dd>{{id}}</dd>
             <dt>Email</dt><dd>{{email}}</dd>
             <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
             <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+            <!-- <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd> -->
             <dt>Country</dt><dd>{{country}}</dd>
           </dl>
         </div>
@@ -81,6 +79,8 @@
 
         var obje = null;
         var song_name = '';
+        var img_url = ' a';
+        var preview_url= '';
 
 
         var userProfileSource = document.getElementById('user-profile-template').innerHTML,
@@ -162,12 +162,8 @@
                     result.push([i, obje [0]])
                   }
 
-             
-                  //console.log(array)
-                  //console.log(obje);
+            
                   var arr = []
-                  // Converting JSON-encoded string to JS object
-                  // Accessing individual value from JS object
                   var data = json;
 
               // convert data into JSON object
@@ -180,14 +176,56 @@
 
               console.log(arr);
 
-              //new
-              
+              //Gives you your top 10
+              arr_names = [];
+              var img_url_arr = []
+
+              for(var i in arr){
+                var item_name = arr[i];
+                var json_name = JSON.stringify(item_name);
+
+                // convert data into JSON object
+                var parsedDataName = JSON.parse(json_name);
+                arr_names[i] = parsedDataName.name;
+                //img_url_all[i] = parsedDataName.album;
+
+                console.log(parsedDataName);
+                console.log(arr_names);
+                //console.log(img_url_all);
+
+                //get Image URL
+                console.log(JSON.parse(JSON.stringify(parsedDataName.album)).images[1].url);
+                img_url_all = JSON.parse(JSON.stringify(arr_names));
+                img_url = JSON.parse(JSON.stringify(parsedDataName.album)).images[1].url;
+                console.log(img_url_all);
+
+                //get array of Image URLS
+                var img_url_arr = []
+                console.log(arr_names);
+                //for(var i in arr_names){
+                  for(var i=0 ; i < 1; i++){
+                  if(!img_url_all.includes(JSON.parse(JSON.stringify(parsedDataName.album)).images[1].url)) {
+                  img_url_arr[i] = JSON.parse(JSON.stringify(parsedDataName.album)).images[1].url;
+                  console.log(img_url_arr[i]);
+
+                  var img = document.createElement("img");
+                  img.src =img_url_arr[i]; 
+                  var src = document.getElementById("x"); 
+                  src.appendChild(img); 
+                  }
+                  else{
+
+                  }
+                  }
+                console.log(img_url_arr);
+
+
+                song_name = parsedDataName.name;
+                console.log(parsedDataName.preview_url)
+              }
+
               var item_name = arr[0];
               var json_name = JSON.stringify(item_name);
-
-              //console.log(json_name);
-
-              
 
               // convert data into JSON object
               var parsedDataName = JSON.parse(json_name);
@@ -196,19 +234,27 @@
               song_name = parsedDataName.name;
               console.log(parsedDataName.preview_url)
 
+              console.log(img_url_arr);
+
               document.getElementById("song_name").innerHTML = song_name;
-              //document.getElementById("preview_link").innerHTML = parsedDataName.preview_url;
+              document.getElementById("song_name_arr").innerHTML = arr_names;
+              //document.getElementById("img_url").innerHTML = img_url;
+              preview_url = parsedDataName.preview_url;
+              document.getElementById("preview_url").href= preview_url;
                 }
 
            });
-          
-
+        
           
       })();
     
     </script>
-<h1>Your top song is:  <span id="song_name"></span></h1>
-<h1>Want to give it a quick listen? </h1>
+<h4> Your top song is: <span id="song_name"> </a></span>   </h4>
+<h4>Want to give it a quick listen?  </a></h4>
+<h4> <a href="www.toBeChanged.com" id="preview_url">Click here! </a> </h4>
+<p>Here are 9 more songs to lift you up. You got this!  <span id="song_name_arr"></span></p>
+
+  <div id="x"></div> 
 
   </body>
 </html>
