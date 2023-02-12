@@ -39,17 +39,14 @@ export class HomeComponent {
     if (input.toUpperCase() == "SCIENCE") {
       window.location.assign("http://localhost:4200/science")
     }
-    if (input.toUpperCase() == "TECHNOLOGY") {
+    else if (input.toUpperCase() == "TECHNOLOGY") {
       window.location.assign("http://localhost:4200/technology")
-
     }
-    if (input.toUpperCase() == "ENGINEERING") {
+    else if (input.toUpperCase() == "ENGINEERING") {
       window.location.assign("http://localhost:4200/engineering")
-
     }
-    if (input.toUpperCase() == "MATH") {
+    else if (input.toUpperCase() == "MATH") {
       window.location.assign("http://localhost:4200/math")
-
     }
     else {
       window.alert("Search result could not be found. Please enter a valid search.")
