@@ -14,25 +14,47 @@ export class StudyComponent {
   interval: any;
   subscribeTimer: any;
   timeFormatted: string = "30:00";
+
   studyTime: string = "30:00";
   studyMin: string = "30";
   studySec: string = "00";
+
+  breakTime: string = "05:00";
   breakMin: string = "05";
   breakSec: string = "00";
+
   safeTime: string = "00";
-  breakTime: string = "05:00";
   minutes: string = "30";
   seconds: string = "00";
   startorpause: string = "Start";
   study: boolean = true;
+  tasks: Array<string> = [];
 
-  TimerForm = this.formBuilder.group({smin: ['', Validators.required],ssec: ['', Validators.required],bmin: ['', Validators.required], bsec: ['', Validators.required]});
+  TimerForm = this.timerFormBuilder.group({smin: ['', Validators.required],ssec: ['', Validators.required],bmin: ['', Validators.required], bsec: ['', Validators.required]});
+  TaskForm = this.taskFormBuilder.group({newTask: ''});
 
   constructor(
-    private formBuilder: FormBuilder,
+    private timerFormBuilder: FormBuilder,
+    private taskFormBuilder: FormBuilder,
   ) { }
 
-  onSubmit(): void {
+  // Task list code
+  onTaskSubmit(): void {
+
+    let newTask = this.TaskForm.get('newTask')?.value;
+    if (newTask != undefined) {
+      this.tasks.push(newTask);
+    }
+    this.TaskForm.reset();
+  }
+
+  deleteTask(task: string) {
+    let i = this.tasks.indexOf(task);
+    this.tasks.splice(i,1);
+  }
+
+  // Timer-related code
+  onTimerSubmit(): void {
     if (this.TimerForm.status == 'INVALID'){
       window.alert("Please enter all fields before setting the timer.")
     } else {
