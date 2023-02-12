@@ -68,7 +68,7 @@ export class StudyComponent {
       }
 
       if (this.studySec.length == 1) {
-        this.studySec = "0" + this.studyMin;
+        this.studySec = "0" + this.studySec;
       }
 
       if (this.breakMin.length == 1) {
@@ -76,7 +76,7 @@ export class StudyComponent {
       }
 
       if (this.breakSec.length == 1) {
-        this.breakSec = "0" + this.breakMin;
+        this.breakSec = "0" + this.breakSec;
       }
 
       this.studyTime = this.studyMin + ":" + this.studySec;
